@@ -12,10 +12,10 @@
 Resposta bem vaga sobre o problema escolhido, nao foi dito sobre o problema escolhido pois o prompt utilizado foi bem vago e abrangiu o sobre um todo.
 
 # ✅ 3. Prompt estruturado (Equação do Prompt)
-Persona: Cancêr de osteosacorma
-Contexto: Cuidados a se tomar
-Restrições: Linguagem simples + dicas práticas
-Formato: Lista + explicação curta
+* Persona: Cancêr de osteosacorma
+* Contexto: Cuidados a se tomar
+* Restrições: Linguagem simples + dicas práticas
+* Formato: Lista + explicação curta
 
 Prompt final: "fale resumidamente sobre o cancer osteosacorma e os cuidados preventivos a se tomar, gostaria de dicas praticas e uma explicação curta e listada"
 
