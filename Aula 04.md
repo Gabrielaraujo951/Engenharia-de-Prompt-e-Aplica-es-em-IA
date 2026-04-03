@@ -17,7 +17,7 @@
 * **Restrições:** Linguagem simples + dicas práticas
 * **Formato:** Lista + explicação curta
 
-Prompt final: "fale resumidamente sobre o cancer osteosacorma e os cuidados preventivos a se tomar, gostaria de dicas praticas e uma explicação curta e listada"
+#### Prompt final: "fale resumidamente sobre o cancer osteosacorma e os cuidados preventivos a se tomar, gostaria de dicas praticas e uma explicação curta e listada"
 
 ## Resposta (boa):
 
