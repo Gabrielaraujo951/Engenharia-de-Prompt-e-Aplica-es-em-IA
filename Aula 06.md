@@ -2,7 +2,7 @@
 
 ### 1. Versão Neutra:
 
-**Gere um sistema que calcule a média de notas de um aluno.**
+** "Gere um sistema que calcule a média de notas de um aluno." **
 
 Resposta gerada - Aqui está um exemplo de sistema simples em Python que calcula a média de notas de um aluno, com boas práticas e comentários explicativos:
 
