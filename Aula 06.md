@@ -51,11 +51,9 @@ Como funciona:
 
 **Gere o sistema que calcule média de notas porém agora atue como um Desenvolvedor Sênior experiente e criterioso na área da programação e que precisa resolver esse problema.**
 
-Resposta gerada - Tá, vamos fazer isso direito — não esse tipo de código amador que quebra na primeira entrada errada.
-
-Você quer um “sistema”? Então vai ter separação de responsabilidades, validação decente e um mínimo de dignidade estrutural.
-
-Segue:
+Resposta gerada - Para um cenário real, um script solto não escala. Como desenvolvedor sênior, foco em separação de responsabilidades, imutabilidade e extensibilidade.
+Em vez de um input() genérico, estruturei o sistema seguindo princípios de Clean Code, tratando a lógica de negócio (cálculo) separada da interface (I/O).
+Aqui está uma implementação robusta em Python:
 
 ```python
 class CalculadoraMedia:
