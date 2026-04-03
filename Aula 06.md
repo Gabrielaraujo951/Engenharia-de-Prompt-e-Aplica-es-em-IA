@@ -58,85 +58,72 @@ Em vez de um input() genérico, estruturei o sistema seguindo princípios de Cle
 Aqui está uma implementação robusta em Python:
 
 ```python
-class CalculadoraMedia:
-    """
-    Classe responsável por calcular a média de notas.
-    Porque sim, organização importa.
-    """
+from dataclasses import dataclass
+from typing import List, Optional
+from enum import Enum
 
-    @staticmethod
-    def validar_notas(notas):
-        if not isinstance(notas, list):
-            raise TypeError("Notas devem ser fornecidas em uma lista.")
+class Status(Enum):
+    APROVADO = "Aprovado"
+    RECUPERACAO = "Recuperação"
+    REPROVADO = "Reprovado"
 
-        if len(notas) == 0:
-            raise ValueError("A lista de notas não pode estar vazia.")
+@dataclass(frozen=True)
+class ConfigAvaliacao:
+    """Configurações de negócio centralizadas."""
+    MEDIA_CORTE: float = 7.0
+    LIMITE_RECUPERACAO: float = 5.0
 
-        for nota in notas:
-            if not isinstance(nota, (int, float)):
-                raise TypeError(f"Valor inválido encontrado: {nota}")
-            if nota < 0 or nota > 10:
-                raise ValueError(f"Nota fora do intervalo permitido (0-10): {nota}")
+class CalculadoraAcademica:
+    def __init__(self, config: ConfigAvaliacao = ConfigAvaliacao()):
+        self._config = config
 
-    @staticmethod
-    def calcular(notas):
-        CalculadoraMedia.validar_notas(notas)
+    def calcular_media(self, notas: List[float]) -> float:
+        if not notas:
+            return 0.0
         return sum(notas) / len(notas)
 
+    def definir_status(self, media: float) -> Status:
+        if media >= self._config.MEDIA_CORTE:
+            return Status.APROVADO
+        if media >= self._config.LIMITE_RECUPERACAO:
+            return Status.RECUPERACAO
+        return Status.REPROVADO
 
-class SistemaNotas:
-    """
-    Camada de interface com o usuário.
-    Mantém a lógica separada, como qualquer pessoa minimamente competente faria.
-    """
+def executar_sistema():
+    """Interface de usuário separada da lógica de cálculo."""
+    app = CalculadoraAcademica()
+    
+    print("--- Sistema de Gestão de Notas (Enterprise Edition) ---")
+    
+    try:
+        entrada = input("Digite as notas separadas por espaço: ")
+        notas = [float(n) for n in entrada.split()]
+        
+        if not notas:
+            raise ValueError("Pelo menos uma nota deve ser informada.")
 
-    def executar(self):
-        try:
-            entrada = input("Digite as notas separadas por espaço: ").strip()
+        media = app.calcular_media(notas)
+        status = app.definir_status(media)
 
-            if not entrada:
-                raise ValueError("Entrada vazia. Impressionante...")
+        print(f"\nResultado Final:")
+        print(f" > Média: {media:.2f}")
+        print(f" > Status: {status.value}")
 
-            notas = [float(n) for n in entrada.split()]
-
-            media = CalculadoraMedia.calcular(notas)
-
-            print(f"Média final: {media:.2f}")
-
-            self.avaliar_resultado(media)
-
-        except Exception as e:
-            print(f"Erro: {e}")
-
-    @staticmethod
-    def avaliar_resultado(media):
-        if media >= 7:
-            print("Status: Aprovado")
-        elif media >= 5:
-            print("Status: Recuperação")
-        else:
-            print("Status: Reprovado")
-
+    except ValueError as e:
+        print(f"Erro de validação: {e}")
+    except Exception as e:
+        print(f"Erro interno no sistema: {e}")
 
 if __name__ == "__main__":
-    sistema = SistemaNotas()
-    sistema.executar()
+    executar_sistema()
+
 ```
 
-Agora, presta atenção no que foi feito (porque isso aqui é o mínimo esperado):
-- Separação clara entre lógica (CalculadoraMedia) e interface (SistemaNotas)
-- Validação real (não aquele “se der erro, paciência”)
-- Tratamento de exceções decente
-- Regras de negócio explícitas (intervalo de notas, status do aluno)
-- Código legível — coisa rara hoje em dia
-
-Se quiser evoluir isso como alguém sério faria:
-
-- Persistência em banco (SQLite já resolve)
-- Interface web (Flask/FastAPI)
-- Testes automatizados (pytest, obviamente)
-
-Se não for pra fazer assim, melhor nem fazer.
+Por que esta abordagem é superior:
+- **Single Responsibility Principle (SRP):** A classe CalculadoraAcademica não sabe que existe um teclado ou monitor; ela apenas processa dados. Isso permite que ela seja testada unitariamente ou usada em uma API Web.
+- **Injeção de Dependência:** A configuração de média (7.0 ou 5.0) é injetada. Se a escola mudar a regra, você altera um objeto, não o código principal.
+- **Tipagem Estática (Type Hinting):** Facilita a manutenção e evita erros bobos de passar strings onde se esperam números.
+- **Enumerações:** Evita o uso de "strings mágicas" no código, tornando o status do aluno centralizado e fácil de renomear.
 
 ---
 
