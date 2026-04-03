@@ -8,7 +8,7 @@
 
 ## Resposta (ruim):
 
-** "O câncer é um termo que abrange mais de 100 doenças diferentes que têm em comum o crescimento desordenado e descontrolado de células, que invadem tecidos e órgãos e podem se espalhar para outras partes do corpo (metástase)."**
+* "O câncer é um termo que abrange mais de 100 doenças diferentes que têm em comum o crescimento desordenado e descontrolado de células, que invadem tecidos e órgãos e podem se espalhar para outras partes do corpo (metástase)."*
 * *Resposta bem vaga sobre o problema escolhido, nao foi dito sobre o problema escolhido pois o prompt utilizado foi bem vago e abrangiu o sobre um todo.*
 
 # ✅ 3. Prompt estruturado (Equação do Prompt)
