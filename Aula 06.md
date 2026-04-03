@@ -214,9 +214,10 @@ Esta versão remove as "perfumarias" (como Enums e bibliotecas de tipagem), mas 
 
  <h1 align="center"> Prints dos Prompts: </h1>
 
- <img width="981" height="841" alt="Image" src="https://github.com/user-attachments/assets/f93cb93b-d122-4b56-a1d1-b68df41f12f3" /><br><br>
+<img width="691" height="582" alt="image" src="https://github.com/user-attachments/assets/42340576-44df-4cb6-8aa0-9023a3c6a4e0" />
 
-<img width="936" height="821" alt="Image" src="https://github.com/user-attachments/assets/ef095c49-3462-4f77-9648-3696f6693e2d" /><br><br>
+<img width="720" height="626" alt="image" src="https://github.com/user-attachments/assets/b1fbde98-cb3b-472c-a173-794180eccb56" />
 
-<img width="888" height="688" alt="Image" src="https://github.com/user-attachments/assets/4d6d586f-36f9-484d-a369-aeed1e6a6ffb" /><br><br>
-   
+<img width="711" height="635" alt="image" src="https://github.com/user-attachments/assets/3afc58dc-e3e0-4ba4-aa73-6c1a4d4952c3" />
+
+
