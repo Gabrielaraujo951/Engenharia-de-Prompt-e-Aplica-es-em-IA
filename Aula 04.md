@@ -8,8 +8,8 @@
 
 ## Resposta (ruim):
 
-### "O câncer é um termo que abrange mais de 100 doenças diferentes que têm em comum o crescimento desordenado e descontrolado de células, que invadem tecidos e órgãos e podem se espalhar para outras partes do corpo (metástase)."
-### Resposta bem vaga sobre o problema escolhido, nao foi dito sobre o problema escolhido pois o prompt utilizado foi bem vago e abrangiu o sobre um todo.
+#### "O câncer é um termo que abrange mais de 100 doenças diferentes que têm em comum o crescimento desordenado e descontrolado de células, que invadem tecidos e órgãos e podem se espalhar para outras partes do corpo (metástase)."
+#### Resposta bem vaga sobre o problema escolhido, nao foi dito sobre o problema escolhido pois o prompt utilizado foi bem vago e abrangiu o sobre um todo.
 
 # ✅ 3. Prompt estruturado (Equação do Prompt)
 * **Persona:** Cancêr de osteosacorma
@@ -45,4 +45,5 @@ Diferente de outros tipos de câncer, **não existem causas externas conhecidas*
 ---
 > **Nota:** Este documento tem caráter informativo. Em caso de sintomas, consulte um médico ortopedista ou oncologista.
 
+#### Resposta bem completa seguindo a estruturação conduzida co prompt estruturado, informando tudo da maneira em que foi solicidado e tambem a linguagem pratica e formatação. 
 
