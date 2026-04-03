@@ -134,53 +134,50 @@ Por que esta abordagem é superior:
 Resposta gerada:
 
 ```python
-class CalculadoraMedia:
-    @staticmethod
-    def validar_notas(notas):
-        if not isinstance(notas, list):
-            raise TypeError("Notas devem ser fornecidas em uma lista.")
-        if len(notas) == 0:
+class SistemaAcademico:
+    def __init__(self, media_aprovacao=7.0, media_recuperacao=5.0):
+        self._media_aprovacao = media_aprovacao
+        self._media_recuperacao = media_recuperacao
+
+    def processar_notas(self, notas):
+        if not notas:
             raise ValueError("A lista de notas não pode estar vazia.")
-        for nota in notas:
-            if not isinstance(nota, (int, float)):
-                raise TypeError(f"Valor inválido: {nota}")
-            if nota < 0 or nota > 10:
-                raise ValueError(f"Nota fora do intervalo (0-10): {nota}")
+        
+        media = sum(notas) / len(notas)
+        status = self._definir_status(media)
+        return {"media": round(media, 2), "status": status}
 
-    @staticmethod
-    def calcular(notas):
-        CalculadoraMedia.validar_notas(notas)
-        return sum(notas) / len(notas)
+    def _definir_status(self, media):
+        if media >= self._media_aprovacao:
+            return "APROVADO"
+        if media >= self._media_recuperacao:
+            return "RECUPERACAO"
+        return "REPROVADO"
 
+def main():
+    sistema = SistemaAcademico()
+    
+    try:
+        entrada = input("Insira as notas separadas por espaço: ").strip()
+        if not entrada:
+            print("Erro: Nenhuma nota foi fornecida.")
+            return
 
-class SistemaNotas:
-    def executar(self):
-        try:
-            entrada = input("Digite as notas separadas por espaço: ").strip()
-            if not entrada:
-                raise ValueError("Entrada vazia.")
+        notas = [float(n) for n in entrada.split()]
+        resultado = sistema.processar_notas(notas)
 
-            notas = [float(n) for n in entrada.split()]
-            media = CalculadoraMedia.calcular(notas)
+        print(f"\n--- RELATÓRIO FINAL ---")
+        print(f"Média: {resultado['media']}")
+        print(f"Status: {resultado['status']}")
 
-            print(f"Média final: {media:.2f}")
-            self.avaliar_resultado(media)
-
-        except Exception as e:
-            print(f"Erro: {e}")
-
-    @staticmethod
-    def avaliar_resultado(media):
-        if media >= 7:
-            print("Status: Aprovado")
-        elif media >= 5:
-            print("Status: Recuperação")
-        else:
-            print("Status: Reprovado")
-
+    except ValueError as e:
+        print(f"Erro de entrada: Certifique-se de digitar apenas números válidos.")
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
 
 if __name__ == "__main__":
-    SistemaNotas().executar()
+    main()
+
 ```
 
 ---
