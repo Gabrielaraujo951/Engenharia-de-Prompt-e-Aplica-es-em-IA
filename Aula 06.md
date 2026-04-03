@@ -4,55 +4,46 @@
 
 **Gere um sistema que calcule a média de notas de um aluno. **
 
-Resposta gerada - Aqui está um exemplo de sistema simples em Python que calcula a média de notas de um aluno, com boas práticas e comentários explicativos:
+Resposta gerada - Aqui está um script simples em Python que recebe as notas, calcula a média e diz se o aluno foi aprovado (considerando a média 7.0).
 
 ```python
-def calcular_media(notas):
-    """
-    Função que recebe uma lista de notas e retorna a média.
-    Valida se a lista está vazia antes de calcular.
-    """
-    if not notas:  # Verifica se a lista está vazia
-        return None
-
-    soma = sum(notas)  # Soma todas as notas
-    quantidade = len(notas)  # Conta quantas notas existem
-
-    media = soma / quantidade  # Calcula a média
-    return media
-
-
-def main():
-    """
-    Função principal do sistema.
-    Responsável por coletar dados do usuário e exibir o resultado.
-    """
+def calcular_media():
+    print("--- Sistema de Notas ---")
+    
     try:
-        entrada = input("Digite as notas separadas por espaço: ")
-        
-        # Converte a entrada em uma lista de números (float)
-        notas = [float(nota) for nota in entrada.split()]
+        # Recebe a quantidade de notas
+        qtd_notas = int(input("Quantas notas deseja inserir? "))
+        notas = []
 
-        media = calcular_media(notas)
+        # Coleta as notas
+        for i in range(qtd_notas):
+            nota = float(input(f"Digite a nota {i+1}: "))
+            notas.append(nota)
 
-        if media is None:
-            print("Nenhuma nota foi informada.")
+        # Calcula a média
+        media = sum(notas) / len(notas)
+
+        # Exibe o resultado
+        print(f"\nMédia final: {media:.2f}")
+
+        if media >= 7:
+            print("Status: APROVADO! 🎉")
+        elif media >= 5:
+            print("Status: RECUPERAÇÃO. 📝")
         else:
-            print(f"Média do aluno: {media:.2f}")
-
+            print("Status: REPROVADO. ❌")
+            
     except ValueError:
-        print("Erro: certifique-se de digitar apenas números válidos.")
-
+        print("Erro: Por favor, digite apenas números.")
 
 # Executa o sistema
-if __name__ == "__main__":
-    main()
+calcular_media()
+
 ```
-O que esse sistema faz:
-- Recebe várias notas digitadas pelo usuário
-- Valida se a entrada é válida
-- Evita erro caso nenhuma nota seja informada
-- Calcula e exibe a média com duas casas decimais
+Como funciona:
+- Entrada dinâmica: Você escolhe quantas notas quer calcular (2, 3, 10, etc).
+- Tratamento de erro: Se você digitar uma letra por engano, o programa não "quebra".
+- Lógica de Aprovação: Já vem com critérios de corte (Aprovado, Recuperação ou Reprovado).
 
 ---
 
