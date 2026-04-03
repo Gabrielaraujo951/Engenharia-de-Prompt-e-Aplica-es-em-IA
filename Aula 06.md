@@ -184,14 +184,33 @@ if __name__ == "__main__":
 
 # Análise:
 
-## Versão Neutra:
-O cálculo tá certinho e o código roda sem problemas. É simples e direto, com comentários explicando cada linha (mesmo que ninguém tenha pedido). A IA mandou bem, não errou nada e seguiu o que foi passado.
+## Versão Neutra (Script Procedural)
+Esta versão foca em viabilidade imediata. É o que chamamos de "script rápido":
+Vantagens: Código linear e fácil de ler para iniciantes. Resolve o problema com o menor número de linhas possível.
+Desvantagens: Acoplamento alto. A lógica de cálculo está misturada com a interação do usuário (input/print). Se você quisesse usar esse código em um site ou aplicativo mobile futuramente, teria que reescrevê-lo do zero, pois ele está "preso" ao terminal.
 
-## Versão Persona:
-O código funcionou perfeitamente e veio bem mais completo, calculando até se o aluno passou, ficou de recuperação ou reprovou. A IA ainda criou regras para notas de 0 a 10, tudo por conta própria. O melhor foi que ela não saiu do personagem em nenhum momento, nem nos comentários.
+**Veredito:** Ideal para automações simples e aprendizado inicial.
 
-## Versão Restritiva:
-O cálculo tá certo e o código é limpo, mas como não tem quase nenhuma explicação, fica difícil para quem está começando. A IA seguiu a regra de não enrolar, mas acabou esquecendo o personagem do prompt anterior e trocou as frases engraçadinhas por mensagens genéricas.
+## Versão Persona (Arquitetura Enterprise)
+
+Aqui o foco é escalabilidade e manutenção. Aplica padrões usados em grandes sistemas:
+
+**Vantagens:** Utiliza Programação Orientada a Objetos (POO) e Data Classes. O uso de Enum para os status evita erros de digitação (ex: escrever "Aprovado" em um lugar e "aprovado" em outro). A lógica de negócio é agnóstica; ela não sabe que os dados vêm do teclado, o que permite criar testes automatizados facilmente.
+
+**Desvantagens:** Para um problema simples de média, pode ser considerada Overengineering (complexidade excessiva para uma tarefa pequena).
+
+**Veredito:** Representa o padrão de mercado para sistemas que precisam crescer e ser mantidos por times grandes.
+
+## Versão Restritiva (Equilíbrio Técnico)
+
+Esta versão remove as "perfumarias" (como Enums e bibliotecas de tipagem), mas mantém a estrutura de classe:
+
+**Vantagens:** Mantém a separação de responsabilidades (Cálculo vs. Interface) sem depender de recursos modernos do Python que podem não estar disponíveis em ambientes muito antigos. É um código "puro" e robusto.
+
+**Desvantagens:** Menos expressiva que a segunda versão. O uso de dicionários manuais {"media": ...} é mais propenso a erros de chave do que o uso de objetos tipados.
+
+**Veredito:** É o código mais pragmático. Resolve o problema com elegância técnica, mas sem a verbosidade do padrão corporativo total.
+
 
  <h1 align="center"> Prints dos Prompts: </h1>
 
