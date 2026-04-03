@@ -224,7 +224,5 @@ O cálculo tá certo e o código é limpo, mas como não tem quase nenhuma expli
 
 <img width="936" height="821" alt="Image" src="https://github.com/user-attachments/assets/ef095c49-3462-4f77-9648-3696f6693e2d" /><br><br>
 
-<img width="880" height="408" alt="Image" src="https://github.com/user-attachments/assets/df7f0537-b0e6-4099-b4d7-5eb4f6a38de2" /><br><br>
-
 <img width="888" height="688" alt="Image" src="https://github.com/user-attachments/assets/4d6d586f-36f9-484d-a369-aeed1e6a6ffb" /><br><br>
    
