@@ -2,7 +2,7 @@
 
 ### 1. Versão Neutra:
 
-** "Gere um sistema que calcule a média de notas de um aluno." **
+**Gere um sistema que calcule a média de notas de um aluno. **
 
 Resposta gerada - Aqui está um exemplo de sistema simples em Python que calcula a média de notas de um aluno, com boas práticas e comentários explicativos:
 
@@ -58,7 +58,7 @@ O que esse sistema faz:
 
 ### 2. Versão Persona:
 
-**Gere o sistema que calcule média de notas porém agora atue como um Dev Sênior muito experiente e arrogante na área da programação e que precisa resolver esse problema.**
+**Gere o sistema que calcule média de notas porém agora atue como um Desenvolvedor Sênior experiente e criterioso na área da programação e que precisa resolver esse problema.**
 
 Resposta gerada - Tá, vamos fazer isso direito — não esse tipo de código amador que quebra na primeira entrada errada.
 
@@ -209,22 +209,14 @@ if __name__ == "__main__":
 
 # Análise:
 
-### Versão Neutra:
+## Versão Neutra:
+O cálculo tá certinho e o código roda sem problemas. É simples e direto, com comentários explicando cada linha (mesmo que ninguém tenha pedido). A IA mandou bem, não errou nada e seguiu o que foi passado.
 
- O cálculo matemático está correto e o código apresenta bom funcionamento sendo pequeno e simples, não apresenta muitos textos apenas comentários para explicar cada linha, mesmo não sendo solicitado.
-A I.A não cometeu erros no código nem na explicação ao tentar manter-se no personagem pois isso foi algo que não foi solicitado.
+## Versão Persona:
+O código funcionou perfeitamente e veio bem mais completo, calculando até se o aluno passou, ficou de recuperação ou reprovou. A IA ainda criou regras para notas de 0 a 10, tudo por conta própria. O melhor foi que ela não saiu do personagem em nenhum momento, nem nos comentários.
 
-### Versão Persona:
-
- O cálculo matemático está correto e o código funciona perfeitamente sendo bem mais completo e robusto com a função de calcular e mostrar se o aluno está aprovado, de recuperação ou reprovado. 
-Dentro dessa função foi incluido os valores "nota maior ou igual a 7" para "aprovado" e "nota maior ou igual a 5" para "recuperação" e "reprovado" caso não seja nenhum dos valores anteriores,
-além dos valores a serem inseridos serem somente de "0 a 10" sendo tudo isso algo que não foi solicitado para a I.A. Não houve erros ao manter-se no personagem e a I.A o manteve até 
-mesmo dentro dos comentários explicativos e nas mensagens dentro do código.
-
-### Versão Restritiva:
-
- O cálculo matemático está correto e o código funciona perfeitamente sendo um código limpo porém não muito claro para inicantes devído a falta de comentários e textos explicativos. Não houve textos não solicitados
- porém a I.A não manteve o personagem do prompt anterior, o que fez com que algumas mensagens fossem alteradas como por exemplo a mensagem "Entrada vazia. Impressionante..." por "Entrada vazia.".
+## Versão Restritiva:
+O cálculo tá certo e o código é limpo, mas como não tem quase nenhuma explicação, fica difícil para quem está começando. A IA seguiu a regra de não enrolar, mas acabou esquecendo o personagem do prompt anterior e trocou as frases engraçadinhas por mensagens genéricas.
 
  <h1 align="center"> Prints dos Prompts: </h1>
 
